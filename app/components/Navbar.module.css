@@ -1,0 +1,31 @@
+@import url("https://fonts.googleapis.com/css2?family=Albert+Sans:ital,wght@0,100..900;1,100..900&display=swap");
+
+.navbar_container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 10px;
+  font-family: "Albert Sans", sans-serif;
+  font-optical-sizing: auto;
+  height: 70px;
+}
+.navbar_container_left {
+  position: absolute;
+}
+.navbar_container_right {
+  flex-direction: row;
+  display: flex;
+  align-items: center;
+  padding-right: 10px;
+}
+
+.navlink_container {
+  margin-right: 50px;
+}
+
+.navlink {
+  color: black;
+  font-weight: 500;
+  font-size: 20px;
+}

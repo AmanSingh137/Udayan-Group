@@ -1,0 +1,84 @@
+@import url("https://fonts.googleapis.com/css2?family=Albert+Sans:ital,wght@0,100..900;1,100..900&display=swap");
+.footer_main_container {
+  background: #2e3192;
+  font-family: "Albert Sans", sans-serif;
+  font-optical-sizing: auto;
+}
+.footer_container_top {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer_container_bottom {
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  display: flex;
+  margin: 20px;
+  border-top: 1px solid rgb(160, 160, 160);
+  padding-top: 20px;
+}
+
+.footer_container_top_left {
+  padding: 20px;
+  width: 600px;
+}
+
+.email_input_container {
+  padding: 10px;
+  background-color: white;
+  outline: none;
+  border-radius: 10px;
+  font-family: "Albert Sans", sans-serif;
+  font-optical-sizing: auto;
+}
+
+.footer_header {
+  font-size: 50px;
+  margin-top: 10px;
+  font-family: "Albert Sans", sans-serif;
+  font-optical-sizing: auto;
+}
+.footer_description {
+  font-size: 20px;
+  margin-top: 10px;
+  font-family: "Albert Sans", sans-serif;
+  font-optical-sizing: auto;
+  color: rgb(224, 224, 224);
+}
+
+.email_input_container {
+  background-color: white;
+  align-items: center;
+  border: none;
+  color: black;
+  width: 100%;
+}
+
+.input_container {
+  margin-top: 10px;
+  flex-direction: row;
+  display: flex;
+  align-items: center;
+  background-color: aliceblue;
+  border-radius: 10px;
+  padding: 2px;
+  justify-content: space-between;
+}
+
+.social_icon {
+  margin-right: 10px;
+}
+
+.social_icons {
+  flex-direction: row;
+  display: flex;
+}
+
+.submit_btn_container {
+  background-color: #2e3192;
+  padding: 10px;
+  border-radius: 10px;
+}

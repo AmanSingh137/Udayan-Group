@@ -1,0 +1,27 @@
+.marquee_container {
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  position: relative;
+  padding: 40px;
+}
+
+.marquee {
+  display: flex;
+  gap: 20px;
+  animation: marquee-scroll 10s linear infinite;
+}
+
+.marquee_item {
+  flex-shrink: 0;
+  width: 25%;
+}
+
+@keyframes marquee-scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
