@@ -6,6 +6,7 @@ import Faq from "./components/Business/Faq";
 import Footer from "./components/Footer";
 import LeaderShip from "./components/Business/LeaderShip";
 import Businesses from "./components/Business/Businesses";
+import Tree from "./components/Business/Tree";
 function BusinessPage() {
   return (
     <div>
@@ -55,6 +56,10 @@ function BusinessPage() {
           <div className={styles.leadership_container_sub}>
             <Businesses></Businesses>
           </div>
+        </div>
+
+        <div>
+          <Tree></Tree>
         </div>
 
         <div className={styles.leadership_container}>

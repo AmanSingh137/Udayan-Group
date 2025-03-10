@@ -1,0 +1,128 @@
+/* components/Tree.module.css */
+
+.treeContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding: 20px;
+  font-family: "Albert Sans", sans-serif;
+  color: #000000;
+}
+
+/* Root Node */
+.root {
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+/* Main vertical connector from root */
+.connectorVertical {
+  width: 2px;
+  height: 30px;
+  background-color: #2563eb;
+  position: relative;
+}
+
+/* Container for child nodes */
+.childrenContainer {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 40px;
+  position: relative;
+  margin-top: 10px;
+  padding: 0 20px;
+}
+
+/* Horizontal line connecting child nodes */
+.childrenContainer::before {
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #2563eb;
+}
+
+/* Circles at both ends of the horizontal line */
+.childrenContainer .circleLeft,
+.childrenContainer .circleRight {
+  position: absolute;
+  top: -14px;
+  width: 10px;
+  height: 10px;
+  background-color: #2563eb;
+  border-radius: 50%;
+}
+
+.childrenContainer .circleLeft {
+  left: -5px;
+}
+
+.childrenContainer .circleRight {
+  right: -5px;
+}
+
+/* Individual child node */
+.childNode {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  opacity: 0; /* Initially hidden */
+  transform: translateY(-50px); /* Start from above */
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out; /* Smooth transition */
+}
+
+/* Animation when the node enters the view */
+.animateDrop {
+  opacity: 1; /* Fade in */
+  transform: translateY(0); /* Drop into place */
+}
+
+/* Vertical connector for each child node (with different lengths) */
+.childNode .connectorVerticalChild {
+  width: 2px;
+  height: var(--line-height, 40px);
+  background-color: #2563eb;
+  position: relative;
+  margin-bottom: 10px;
+}
+
+/* Filled circle at the end of vertical lines */
+.childNode .connectorVerticalChild::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 50%;
+  width: 10px;
+  height: 10px;
+  background-color: #2563eb;
+  border-radius: 50%;
+  transform: translateX(-50%);
+}
+
+/* Card styling */
+.card {
+  background: white;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  padding: 16px;
+  width: 220px;
+  text-align: center;
+  border: 1px solid #e5e7eb;
+}
+
+.card h3 {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.card p {
+  font-size: 14px;
+  color: #4b5563;
+}
