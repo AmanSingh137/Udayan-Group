@@ -1,0 +1,18 @@
+.leadership_container {
+  /* width: 100%; */
+}
+.leaderships {
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+.leadership_heading {
+  /* width: 90%; */
+  font-family: "Albert Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-size: 60px;
+  color: black;
+}
+.leadership_container_bar {
+  width: 90%;
+  padding-top: 40px;
+}

@@ -1,0 +1,73 @@
+.business_container {
+  position: relative;
+  width: 420px;
+  height: 600px;
+  overflow: hidden;
+}
+
+.business_container_top {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.business_container_image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.6); /* Transparent white */
+  opacity: 0; /* Initially hidden */
+  transition: opacity 0.5s ease-in-out; /* Smooth fade-in effect */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.overlay_text {
+  text-align: left;
+  color: black;
+  font-family: "Albert Sans", sans-serif;
+  font-optical-sizing: auto;
+  transition: opacity 0.3s ease-in-out; /* Text animation */
+  opacity: 0;
+  padding-top: 10px;
+}
+
+.overlay_text h2 {
+  font-size: 30px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.overlay_text p {
+  font-size: 18px;
+}
+
+.business_container_top:hover .overlay {
+  opacity: 1; /* Show the overlay on hover */
+  cursor: pointer;
+}
+
+.business_container_top:hover .overlay_text {
+  opacity: 1; /* Show the text on hover */
+  animation: fadeInText 0.5s ease-in-out; /* Animation for text */
+}
+
+@keyframes fadeInText {
+  from {
+    transform: translateY(10px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}

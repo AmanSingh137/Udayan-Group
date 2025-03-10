@@ -1,0 +1,17 @@
+.faq_container {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+.faq_heading {
+  width: 90%;
+  font-family: "Albert Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-size: 60px;
+  color: black;
+}
+.faq_container_bar {
+  width: 90%;
+  padding-top: 40px;
+}

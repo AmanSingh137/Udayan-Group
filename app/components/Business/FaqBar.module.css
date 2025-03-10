@@ -1,0 +1,64 @@
+.faqbar_container {
+  font-family: "Albert Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-size: 20px;
+  color: black;
+  overflow: hidden;
+  transition: box-shadow 0.3s ease-in-out;
+  border-bottom: 1px solid rgb(221, 220, 220);
+  padding-bottom: 20px;
+}
+
+.faqbar_container_up {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.faqbar_container_header {
+  font-size: 24px;
+  font-weight: 600;
+  flex: 1;
+}
+
+.faqbar_container_description {
+  font-size: 18px;
+  padding: 15px;
+  line-height: 1.5;
+}
+
+/* Toggle Animation */
+.faqbar_container_down {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease-in-out, opacity 0.3s ease-in-out;
+  opacity: 0;
+}
+
+.open {
+  max-height: 500px; /* Adjust based on content */
+  opacity: 1;
+}
+
+/* Down Icon */
+.down_icon {
+  background-color: rgb(237, 237, 237);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  padding: 8px;
+  transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
+}
+
+.down_icon:hover {
+  background-color: rgb(220, 220, 220);
+}
+
+.rotate {
+  transform: rotate(180deg);
+}

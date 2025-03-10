@@ -1,0 +1,30 @@
+@import url("https://fonts.googleapis.com/css2?family=Albert+Sans:ital,wght@0,100..900;1,100..900&display=swap");
+
+.numberstrip_container {
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  /* background-color: #f0f0f0; */
+
+  display: flex;
+  /* height: 100px; */
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.number_container {
+  width: 15%;
+}
+
+.number_container_heading {
+  color: black;
+  font-family: "Albert Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-size: 30px;
+}
+
+.number_container_description {
+  color: black;
+  font-family: "Albert Sans", sans-serif;
+  font-optical-sizing: auto;
+}
