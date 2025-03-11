@@ -58,7 +58,7 @@ function BusinessPage() {
           </div>
         </div>
 
-        <div>
+        <div className={styles.tree_container}>
           <Tree></Tree>
         </div>
 

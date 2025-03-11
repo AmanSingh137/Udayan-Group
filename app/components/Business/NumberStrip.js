@@ -9,23 +9,23 @@ function NumberStrip() {
     {
       value: 1000000,
       suffix: "+",
-      text: "We ensure robust operations that support our investments",
+      text: "We ensure robust operations",
     },
     {
       value: 95,
       suffix: "%",
-      text: "We aim to satisfy our customers, employees, owners.",
+      text: "We aim to satisfy our customers, employees",
     },
     { value: 10000, suffix: "+", text: "Udyan group People Around the World" },
     {
       value: 1000000,
       suffix: "+",
-      text: "We ensure robust operations that support our investments",
+      text: "We ensure robust operations that support our",
     },
     {
       value: 95,
       suffix: "%",
-      text: "We aim to satisfy our customers, employees, owners.",
+      text: "We aim to satisfy our customers, employees",
     },
   ];
 

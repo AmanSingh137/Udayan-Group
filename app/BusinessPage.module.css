@@ -33,6 +33,13 @@
   color: black;
   width: 500px;
 }
+.tree_container {
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
 .business_description {
   font-family: "Albert Sans", sans-serif;
   font-optical-sizing: auto;
