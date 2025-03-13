@@ -1,9 +1,9 @@
 import React from "react";
 import styles from "./CommunityPage.module.css";
-import ImagesMarquee from "./components/community/ImagesMarquee";
+import ImagesMarquee from "./components/Community/ImagesMarquee";
 import Footer from "./components/Footer";
-import NumberStrip from "./components/community/NumberStrip";
-import QuoteCard from "./components/community/QuoteCard";
+import NumberStrip from "./components/Community/NumberStrip";
+import QuoteCard from "./components/Community/QuoteCard";
 function CommunityPage() {
   const items = Array.from({ length: 10 }, (_, i) => ({
     id: i,

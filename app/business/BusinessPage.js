@@ -1,12 +1,12 @@
 import React from "react";
 import styles from "../BusinessPage.module.css";
-import NumberStrip from "../components/business/NumberStrip";
+import NumberStrip from "../components/Business/NumberStrip";
 import Image from "next/legacy/image";
-import Faq from "../components/business/Faq";
+import Faq from "../components/Business/Faq";
 import Footer from "../components/Footer";
-import LeaderShip from "../components/business/LeaderShip";
-import Businesses from "../components/business/Businesses";
-import Tree from "../components/business/Tree";
+import LeaderShip from "../components/Business/LeaderShip";
+import Businesses from "../components/Business/Businesses";
+import Tree from "../components/Business/Tree";
 
 function BusinessPage() {
   return (
