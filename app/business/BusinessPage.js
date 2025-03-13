@@ -73,7 +73,6 @@ function BusinessPage() {
           <Faq></Faq>
         </div>
       </div>
-      <Footer></Footer>
     </div>
   );
 }

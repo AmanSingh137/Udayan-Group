@@ -90,7 +90,6 @@ function CommunityPage() {
       <div>
         <NumberStrip></NumberStrip>
       </div>
-      <Footer></Footer>
     </div>
   );
 }
