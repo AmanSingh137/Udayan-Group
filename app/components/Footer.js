@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Image from "next/legacy/image";
 import React from "react";
 import styles from "./Footer.module.css";
 import { InstagramIcon, XIcon, FacebookIcon } from "../svg";
@@ -23,7 +23,7 @@ function Footer() {
           </div>
         </div>
         <div className={styles.footer_container_top_right}>
-          <Image src={"/footer_graph.png"} width={600} height={400}></Image>
+          <Image alt="footer graph 1" src={"/footer_graph.png"} width={600} height={400}></Image>
         </div>
       </div>
       <div className={styles.footer_container_bottom}>

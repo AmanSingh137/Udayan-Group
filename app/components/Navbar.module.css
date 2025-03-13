@@ -9,6 +9,7 @@
   font-family: "Albert Sans", sans-serif;
   font-optical-sizing: auto;
   height: 70px;
+  z-index: 10000;
 }
 .navbar_container_left {
   position: absolute;

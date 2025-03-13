@@ -3,11 +3,11 @@ import { useEffect, useState } from "react";
 import styles from "./HomePage.module.css";
 // import AOS from "aos";
 // import "aos/dist/aos.css";
-import Image from "next/image";
-import HomeQualityCard from "./components/Home/HomeQualityCard";
-import NumberStrip from "./components/Home/NumberStrip";
-import BrandStrip from "./components/Home/BrandStrip";
-import Carousel from "./components/Home/Carousel";
+import Image from "next/legacy/image";
+import HomeQualityCard from "./components/home/HomeQualityCard";
+import NumberStrip from "./components/home/NumberStrip";
+import BrandStrip from "./components/home/BrandStrip";
+//import Carousel from "./components/home/Carousel";
 
 function HomePage() {
   const [isMobile, setIsMobile] = useState(false);

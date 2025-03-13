@@ -48,12 +48,14 @@ const Tree = () => {
     );
 
     nodeRefs.current.forEach((node) => {
-      observer.observe(node);
+      if (node)
+        observer.observe(node);
     });
 
     return () => {
       nodeRefs.current.forEach((node) => {
-        observer.unobserve(node);
+        if (node)
+          observer.unobserve(node);
       });
     };
   }, []);

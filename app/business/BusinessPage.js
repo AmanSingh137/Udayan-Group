@@ -1,12 +1,13 @@
 import React from "react";
-import styles from "./BusinessPage.module.css";
-import NumberStrip from "./components/Business/NumberStrip";
-import Image from "next/image";
-import Faq from "./components/Business/Faq";
-import Footer from "./components/Footer";
-import LeaderShip from "./components/Business/LeaderShip";
-import Businesses from "./components/Business/Businesses";
-import Tree from "./components/Business/Tree";
+import styles from "../BusinessPage.module.css";
+import NumberStrip from "../components/business/NumberStrip";
+import Image from "next/legacy/image";
+import Faq from "../components/business/Faq";
+import Footer from "../components/Footer";
+import LeaderShip from "../components/business/LeaderShip";
+import Businesses from "../components/business/Businesses";
+import Tree from "../components/business/Tree";
+
 function BusinessPage() {
   return (
     <div>
@@ -49,7 +50,7 @@ function BusinessPage() {
             </p>
           </div>
 
-          <Image src={"/logo.png"} width={420} height={420}></Image>
+          <Image alt="logo 1" src={"/logo.png"} width={420} height={420}></Image>
         </div>
 
         <div className={styles.leadership_container}>

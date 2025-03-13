@@ -1,19 +1,13 @@
-import Image from "next/image";
+import React from 'react';
 import styles from "./page.module.css";
-import Navbar from "./components/Navbar";
-import Footer from "./components/Footer";
 import HomePage from "./HomePage";
-import BusinessPage from "./BusinessPage";
-import CommunityPage from "./CommunityPage";
 
-export default function Home() {
+function page() {
   return (
     <div className={styles.page}>
-      <Navbar></Navbar>
-      {/* <BusinessPage></BusinessPage> */}
-      <CommunityPage></CommunityPage>
-      {/* <HomePage></HomePage>
-      <Footer></Footer> */}
+      <HomePage />
     </div>
   );
-}
+};
+
+export default page;
