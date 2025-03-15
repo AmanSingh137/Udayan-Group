@@ -18,17 +18,24 @@ function Footer() {
               className={styles.email_input_container}
             ></input>
             <div className={styles.submit_btn_container}>
-              <p>Submit</p>
+              <p className={styles.submit_btn_container_txt}>Submit</p>
             </div>
           </div>
         </div>
         <div className={styles.footer_container_top_right}>
-          <Image alt="footer graph 1" src={"/footer_graph.png"} width={600} height={400}></Image>
+          <Image
+            alt="footer graph 1"
+            src={"/footer_graph.png"}
+            width={600}
+            height={400}
+          ></Image>
         </div>
       </div>
       <div className={styles.footer_container_bottom}>
         <div>
-          <p>copyright © 2020-24 Udayan Group Pvt Ltd.</p>
+          <p className={styles.footer_container_bottom_copyright_txt}>
+            copyright © 2020-24 Udayan Group Pvt Ltd.
+          </p>
         </div>
         <div className={styles.social_icons}>
           <div className={styles.social_icon}>

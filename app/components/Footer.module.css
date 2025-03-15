@@ -40,6 +40,13 @@
   margin-top: 10px;
   font-family: "Albert Sans", sans-serif;
   font-optical-sizing: auto;
+  color: white;
+}
+.footer_container_bottom_copyright_txt {
+  color: white;
+}
+.submit_btn_container_txt {
+  color: white;
 }
 .footer_description {
   font-size: 20px;
