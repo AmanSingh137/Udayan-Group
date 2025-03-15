@@ -2,6 +2,7 @@ import Image from "next/legacy/image";
 import React from "react";
 import styles from "./Footer.module.css";
 import { InstagramIcon, XIcon, FacebookIcon } from "../svg";
+
 function Footer() {
   return (
     <div className={styles.footer_main_container}>
