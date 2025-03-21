@@ -1,0 +1,125 @@
+@import url("https://fonts.googleapis.com/css2?family=Albert+Sans:ital,wght@0,100..900;1,100..900&display=swap");
+.container {
+  max-width: 90%;
+  margin: auto;
+  /* border: 1px solid black; */
+  padding: 20px;
+  font-family: "Albert Sans", sans-serif;
+  font-optical-sizing: auto;
+  /* height: 100vh; */
+  justify-content: flex-start;
+  /* align-items: center; */
+  display: flex;
+  flex-direction: column;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+.header_container {
+  border-bottom: 2px solid rgb(196, 196, 196);
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+}
+.backLink {
+  text-decoration: none;
+  color: black;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.heading {
+  font-size: 28px;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.heading span {
+  color: #333;
+}
+
+.content {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.jobDetails {
+  width: 55%;
+  border-right: 2px solid rgb(190, 190, 190);
+}
+
+.jobDetails h3 {
+  margin-top: 20px;
+  font-size: 24px;
+}
+
+.jobDetails p {
+  font-size: 14px;
+  color: #555;
+  margin-top: 12px;
+}
+
+.jobDetails ul {
+  padding-left: 20px;
+}
+
+.jobDetails ul li {
+  margin-bottom: 10px;
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+.skills {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.skills span {
+  background: #eee;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 12px;
+}
+
+.formContainer {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+}
+
+.input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  /* border-radius: 5px; */
+  background-color: #fff;
+  outline: none;
+  font-size: 18px;
+  font-family: "Albert Sans", sans-serif;
+  font-optical-sizing: auto;
+  color: #000;
+  margin-top: 5px;
+}
+
+.upload {
+  border: 1px dashed #aaa;
+  padding: 10px;
+  text-align: center;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+.applyButton {
+  background: #2e3192;
+  color: white;
+  padding: 12px;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  border-radius: 5px;
+}
+
+.applyButton:hover {
+  background: #1a1a88;
+}
