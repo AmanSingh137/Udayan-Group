@@ -3,9 +3,11 @@
 .container {
   display: flex;
   padding: 20px;
-  height: 80vh;
+  height: auto;
+  /* overflow-y: scroll; */
   font-family: "Albert Sans", sans-serif;
   font-optical-sizing: auto;
+  padding-bottom: 100px;
 }
 
 .sidebar {
