@@ -76,11 +76,11 @@
 .checkbox_title {
   margin-left: 5px;
 }
-:global(label) {
-  /* ✅ Fixed by using :global() */
+/* :global(label) {
+ 
   display: block;
   margin-bottom: 10px;
-}
+} */
 
 /* Header */
 .header {
