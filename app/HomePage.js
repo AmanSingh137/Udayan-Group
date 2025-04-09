@@ -1,8 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
 import styles from "./HomePage.module.css";
-// import AOS from "aos";
-// import "aos/dist/aos.css";
 import Image from "next/legacy/image";
 import HomeQualityCard from "./components/Home/HomeQualityCard";
 import NumberStrip from "./components/Home/NumberStrip";
