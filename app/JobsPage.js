@@ -7,15 +7,15 @@ const jobData = [
   {
     id: 1,
     date: "20 Jan, 2025",
-    title: "Process Excellence",
+    title: "Electrical Engineer",
     location: "Mumbai",
     color: "#FFCCCC",
   },
   {
     id: 2,
     date: "20 Jan, 2025",
-    title: "Process Excellence",
-    location: "Mumbai",
+    title: "Electrical Engineer",
+    location: "Pune",
     color: "#CCE5FF",
   },
   {
