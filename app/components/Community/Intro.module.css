@@ -1,0 +1,89 @@
+@import url("https://fonts.googleapis.com/css2?family=Albert+Sans:ital,wght@0,100..900;1,100..900&display=swap");
+
+.whoWeAre {
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  font-family: "Albert Sans", sans-serif;
+  font-optical-sizing: auto;
+  /* border: 1px solid black; */
+}
+
+/* Add Keyframes for Drop Animation */
+@keyframes dropAnimation {
+  0% {
+    transform: translateY(-30px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.whoWeAre_sub {
+  width: 90%;
+  /* height: 200px; */
+  /* background-color: #2e3192; */
+  padding: 20px;
+  justify-content: space-between;
+  /* align-items: center; */
+  display: flex;
+  flex-direction: row;
+  border-radius: 20px;
+  animation: dropAnimation 0.8s ease-out forwards;
+  animation-delay: 0.1s;
+}
+
+.textContent {
+  width: 50%;
+  padding-right: 40px;
+  animation: dropAnimation 0.8s ease-out forwards;
+  animation-delay: 0.3s;
+}
+
+.business_heading {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.business_para {
+  font-size: 1rem;
+  margin-bottom: 10px;
+}
+
+.business h3 {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.business p {
+  font-size: 1rem;
+}
+
+.corporateResponsibility h3 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-top: 30px;
+}
+
+.corporateResponsibility h4 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.imageContainer {
+  position: relative;
+  width: 300px;
+  height: 100%;
+  overflow: hidden;
+  animation: dropAnimation 0.8s ease-out forwards;
+  animation-delay: 0.5s;
+}
+
+.business_sub_card {
+  display: flex;
+  margin-top: 40px;
+}

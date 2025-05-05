@@ -2,7 +2,7 @@ import { BrandIconSvg } from "@/app/svg";
 import React, { useEffect, useRef, useState } from "react";
 import styles from "./BrandStrip.module.css";
 
-function BrandStrip() {
+function BrandStrip({ animation }) {
   const stripRef = useRef(null);
   const [scrollX, setScrollX] = useState(0);
 
@@ -20,7 +20,12 @@ function BrandStrip() {
       <div
         ref={stripRef}
         className={styles.marquee}
-        style={{ transform: `translateX(${-scrollX}px)` }}
+        style={{
+          transform: `translateX(${-scrollX}px)`,
+          animation: `10s linear infinite ${
+            animation == "right" ? "marquee-scroll1" : "marquee-scroll2"
+          }`,
+        }}
       >
         {[...Array(10)].map((_, index) => (
           <div key={index} className={styles.marquee_item}>

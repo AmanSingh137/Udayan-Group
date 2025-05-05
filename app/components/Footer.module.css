@@ -18,7 +18,7 @@
   display: flex;
   /* margin: 20px; */
   border-top: 1px solid rgb(160, 160, 160);
-  padding-top: 20px;
+  padding: 20px;
 }
 
 .footer_container_top_left {

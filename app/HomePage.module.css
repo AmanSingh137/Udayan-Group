@@ -2,7 +2,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Albert+Sans:ital,wght@0,100..900;1,100..900&display=swap");
 
 .container {
-  height: 100vh;
+  height: 90vh;
   overflow: hidden;
   background-color: rgb(208, 208, 208);
   /* background-color: red;
@@ -13,6 +13,18 @@
   justify-content: flex-end;
   display: flex;
   flex-direction: column;
+  align-items: flex-end;
+}
+.map_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 5%;
+  padding-bottom: 5%;
+}
+.quote_card {
+  padding-top: 50px;
+  padding-bottom: 50px;
 }
 .hidden {
   display: none;
@@ -25,6 +37,7 @@
   width: 500px;
   padding: 20px;
   color: black;
+  border-top-left-radius: 40px;
 }
 .curtain {
   position: absolute;
@@ -489,7 +502,9 @@
 }
 .container2_right_heading {
   font-size: 50px;
+  font-weight: 600;
 }
 .container2_right_paragraph {
   margin-top: 10px;
+  line-height: 23px;
 }

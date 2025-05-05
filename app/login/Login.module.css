@@ -1,0 +1,135 @@
+@import url("https://fonts.googleapis.com/css2?family=Albert+Sans:ital,wght@0,100..900;1,100..900&display=swap");
+.container {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  font-family: "Albert Sans", sans-serif;
+  font-optical-sizing: auto;
+}
+
+.leftPanel {
+  flex: 1; /* Takes 50% of the width */
+  background-color: #2e3192;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  text-align: center;
+}
+
+.leftPanel h1 {
+  font-size: 3rem;
+  font-weight: bold;
+}
+
+.leftPanel p {
+  margin-top: 10px;
+  font-size: 0.9rem;
+  max-width: 300px;
+}
+
+.dots {
+  display: flex;
+  gap: 8px;
+  margin-top: 20px;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  background: white;
+  border-radius: 50%;
+  opacity: 0.5;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.activeDot {
+  opacity: 1;
+  transform: scale(1.2); /* Highlight active dot */
+}
+
+.rightPanel {
+  flex: 1; /* Takes 50% of the width */
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 4rem;
+}
+
+.backLink {
+  text-decoration: none;
+  color: black;
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  font-family: "Albert Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  position: absolute;
+  top: 100px;
+}
+
+.title {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.form {
+  width: 100%;
+}
+
+.label {
+  display: block;
+  margin-top: 10px;
+  font-size: 1.1rem;
+  font-family: "Albert Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+}
+
+.input {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  outline: none;
+  background: white;
+  color: black;
+  font-family: "Albert Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-size: 18px;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.forgotPassword {
+  text-decoration: none;
+  color: #2e3192;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.signInButton {
+  width: 100%;
+  padding: 10px;
+  margin-top: 15px;
+  background-color: #2e3192;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  font-family: "Albert Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+}

@@ -5,7 +5,13 @@ import Image from "next/legacy/image";
 import HomeQualityCard from "./components/Home/HomeQualityCard";
 import NumberStrip from "./components/Home/NumberStrip";
 import BrandStrip from "./components/Home/BrandStrip";
-//import Carousel from "./components/home/Carousel";
+import AOS from "aos";
+import "aos/dist/aos.css"; // Don't forget to import AOS styles
+import Slider from "./components/Home/Slider";
+import TextBlockSection from "./components/Home/TextBlockSection";
+import QuoteCard from "./components/Community/QuoteCard";
+import ScrollVelocity from "./components/Home/ScrollVelocity";
+import SplitText from "./components/Home/SplitText";
 
 function HomePage() {
   const [isMobile, setIsMobile] = useState(false);
@@ -34,7 +40,8 @@ function HomePage() {
   ];
 
   useEffect(() => {
-    // AOS.init({ duration: 2000 });
+    // Initialize AOS
+    AOS.init({ duration: 1000, once: true });
 
     if (typeof window !== "undefined") {
       const handleResize = () => {
@@ -53,12 +60,12 @@ function HomePage() {
     <div>
       <div className={styles.container}>
         {/* Curtain Animation */}
-        {!curtainOpen && (
+        {/* {!curtainOpen && (
           <div className={styles.curtain}>
             <div className={styles.curtainTop}></div>
             <div className={styles.curtainBottom}></div>
           </div>
-        )}
+        )} */}
 
         {/* Background Image */}
         {/* <div className={styles.bg_img}>
@@ -72,24 +79,36 @@ function HomePage() {
        </div> */}
         <div>
           <div className={styles.banner_card}>
-            <h1 className={styles.banner_card_heading}>
+            <SplitText
+              text="The same high performance and quality expectation"
+              className="text-2xl font-semibold text-center"
+              delay={100}
+              animationFrom={{ opacity: 0, transform: "translate3d(0,50px,0)" }}
+              animationTo={{ opacity: 1, transform: "translate3d(0,0,0)" }}
+              easing="easeOutCubic"
+              threshold={0.2}
+              rootMargin="-50px"
+              // onLetterAnimationComplete={handleAnimationComplete}
+            />
+            {/* <h1 className={styles.banner_card_heading}>
               The same high performance and quality expectation
-            </h1>
+            </h1> */}
             <p className={styles.banner_card_paragraph}>
               We believe in treating our Customers with respect and faith. We
               grow through creativity, innovation and inventions. We incorporate
               integrity, honesty and business ethics into all the aspects of our
-              business functioning.{" "}
+              business functioning.
             </p>
           </div>
         </div>
         {/* Content */}
       </div>
+
       <div className={styles.container2}>
-        <div className={styles.container2_left}>
+        <div className={styles.container2_left} data-aos={"fade-right"}>
           <div className={styles.container2_left_img_container}></div>
         </div>
-        <div className={styles.container2_right}>
+        <div className={styles.container2_right} data-aos={"fade-left"}>
           <h1 className={styles.container2_right_heading}>
             Restoring the flow of power what we can do
           </h1>
@@ -119,12 +138,29 @@ function HomePage() {
           );
         })}
       </div>
-      <div></div>
       <div>
-        <BrandStrip></BrandStrip>
+        <Slider></Slider>
+      </div>
+      <div>
+        {/* <BrandStrip animation={"right"}></BrandStrip>
+        <BrandStrip animation={"left"}></BrandStrip> */}
+        <ScrollVelocity
+          texts={["Udayan Group", "Imperial Resort"]}
+          velocity={100}
+          className="custom-scroll-text"
+        />
       </div>
       <div>
         <NumberStrip></NumberStrip>
+      </div>
+      <div className={styles.map_container}>
+        <Image src={require("../public/map1.png")}></Image>
+      </div>
+      <div className={styles.quote_card}>
+        <QuoteCard></QuoteCard>
+      </div>
+      <div>
+        <TextBlockSection></TextBlockSection>
       </div>
     </div>
   );

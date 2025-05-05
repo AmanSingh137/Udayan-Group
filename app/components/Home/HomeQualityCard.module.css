@@ -1,5 +1,5 @@
 .container2 {
-  height: 100vh;
+  height: 85vh;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -31,6 +31,7 @@
 }
 .container2_right_paragraph {
   margin-top: 10px;
+  line-height: 22px;
 }
 
 .container_right_number {

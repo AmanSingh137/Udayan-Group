@@ -1,18 +1,45 @@
-import React from "react";
+"use client";
+import React, { useEffect, useState } from "react";
 import styles from "./CommunityPage.module.css";
 import ImagesMarquee from "./components/Community/ImagesMarquee";
 import Footer from "./components/Footer";
 import NumberStrip from "./components/Community/NumberStrip";
 import QuoteCard from "./components/Community/QuoteCard";
+import Aos from "aos";
+import Intro from "./components/Community/Intro";
+import ExploreMore from "./components/Community/ExploreMore";
+import CircularGallery from "./components/Community/CircularGallery";
+import Restoring from "./components/Community/Restoring";
 function CommunityPage() {
   const items = Array.from({ length: 10 }, (_, i) => ({
     id: i,
-    image: `https://picsum.photos/300/290?random=${i}`, // Random images from Lorem Picsum
+    image: `https://picsum.photos/300/290?energy=${i}`, // Random images from Lorem Picsum
   }));
+
+  const [isMobile, setIsMobile] = useState(false);
+  useEffect(() => {
+    // Initialize AOS
+    Aos.init({ duration: 1000, once: true });
+
+    if (typeof window !== "undefined") {
+      const handleResize = () => {
+        setIsMobile(window.innerWidth < 1200);
+      };
+      handleResize();
+      window.addEventListener("resize", handleResize);
+      return () => window.removeEventListener("resize", handleResize);
+    }
+
+    // Open the curtain after a short delay
+    setTimeout(() => setCurtainOpen(true), 500);
+  }, []);
+
   return (
     <div className={styles.community_container}>
-      <div className={styles.community_container1}>
-        <h1 className={styles.community_heading}>Unearth the future today</h1>
+      <div className={styles.community_container1} data-aos={"fade-down"}>
+        <div className={styles.community_container1_left}>
+          <h1 className={styles.community_heading}>Unearth the future today</h1>
+        </div>
         <div>
           <div className={styles.community_container1_counter_container_strip}>
             <div className={styles.community_container1_counter_container}>
@@ -61,32 +88,28 @@ function CommunityPage() {
         ))}
       </div>
 
-      <div className={styles.container2}>
-        <div className={styles.container2_sub}>
-          <div className={styles.container2_left}>
-            <div className={styles.container2_left_img_container}></div>
-          </div>
-          <div className={styles.container2_right}>
-            <h1 className={styles.container2_right_heading}>
-              Restoring the flow of power what we can do
-            </h1>
-            <p className={styles.container2_right_paragraph}>
-              We want to satisfy our customers, employees, owners and society in
-              equal measure. In each of our sectors of activity we are leaders
-              on a world scale, in terms of both technology and organization. We
-              strive to achieve continuous growth that is far above average for
-              the sectors in which we are active. We aim for a net operating
-              margin that enables us to afford our high expenditure on research
-              and development as well as investments made by our own efforts.
-              Our activities both inside and outside our Firm reflect
-              commitment, trust, openness and sustainability.
-            </p>
-          </div>
-        </div>
+      <Intro></Intro>
+      <Restoring></Restoring>
+      <div
+        style={{
+          position: "relative",
+          justifyContent: "center",
+          backgroundColor: "#F5F5F5",
+          alignItems: "center",
+          displayflex: "flex",
+          paddingTop: "50px",
+          flexDirection: "column",
+        }}
+      >
+        <ExploreMore></ExploreMore>
       </div>
-      <div className={styles.quote_container}>
-        <QuoteCard></QuoteCard>
+
+      <div style={{ height: "600px", position: "relative" }}>
+        <CircularGallery bend={4} textColor="#ffffff" borderRadius={0.05} />
       </div>
+      {/* <div className={styles.quote_container}> */}
+      <QuoteCard></QuoteCard>
+      {/* </div> */}
       <div>
         <NumberStrip></NumberStrip>
       </div>

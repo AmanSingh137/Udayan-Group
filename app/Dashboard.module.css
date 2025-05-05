@@ -1,0 +1,94 @@
+@import url("https://fonts.googleapis.com/css2?family=Albert+Sans:ital,wght@0,100..900;1,100..900&display=swap");
+.container {
+  flex: 1;
+  padding: 20px;
+  font-family: "Albert Sans", sans-serif;
+  font-optical-sizing: auto;
+}
+
+.topBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.search {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  font-size: 16px;
+  width: 400px;
+  font-family: "Albert Sans", sans-serif;
+  font-optical-sizing: auto;
+  background-color: white;
+}
+
+.postJob {
+  background: #2e3192;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 10;
+  cursor: pointer;
+  font-size: 16px;
+  font-family: "Albert Sans", sans-serif;
+  font-optical-sizing: auto;
+}
+
+.jobGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+.heading {
+  font-size: 22px;
+  font-weight: bold;
+  font-family: "Albert Sans", sans-serif;
+  font-optical-sizing: auto;
+}
+
+.filters {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.dropdown {
+  padding: 10px;
+  border-radius: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  font-family: "Albert Sans", sans-serif;
+  font-optical-sizing: auto;
+  background-color: white;
+  color: black;
+  outline: none;
+  font-weight: 600;
+}
+
+.searchBtn {
+  background: #2e3192;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 16px;
+  font-family: "Albert Sans", sans-serif;
+  font-optical-sizing: auto;
+  margin-left: 10px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.topBar_left {
+  display: flex;
+}
+
+.searchBtn_icon {
+  margin-left: 10px;
+}
