@@ -1,12 +1,18 @@
 "use client";
 import { useState, useEffect } from "react";
+import { useRouter } from "next/navigation";
 import styles from "./Login.module.css";
-import axios from "axios";
+import { useAuth } from "../context/AuthContext";
 
 const Login = () => {
   const [activeIndex, setActiveIndex] = useState(0);
-  const [email, setEmail] = useState("");
+  const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
+  const [loading, setLoading] = useState(false);
+  
+  const { login: authLogin } = useAuth();
+  const router = useRouter();
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -16,20 +22,26 @@ const Login = () => {
     return () => clearInterval(interval);
   }, []);
 
-  const login = (e) => {
-    e.preventDefault(); // Prevent default form submission
+  const handleLogin = async (e) => {
+    e.preventDefault();
+    setError("");
+    setLoading(true);
 
-    axios
-      .post("http://localhost:5000/api/auth/login", {
-        username: email,
-        password: password,
-      })
-      .then((response) => {
-        console.log("response.data", response.data); // Handle success response
-      })
-      .catch((error) => {
-        console.error("error", error); // Handle error response
-      });
+    const result = await authLogin(username, password);
+    
+    setLoading(false);
+    
+    if (result.success) {
+      // Redirect based on user role
+      const userRole = result.data.role;
+      if (userRole === "ROLE_EMPLOYER" || userRole === "ROLE_ADMIN") {
+        router.push("/jobs"); // Dashboard for employers
+      } else {
+        router.push("/jobs"); // Job listings for candidates
+      }
+    } else {
+      setError(result.error);
+    }
   };
 
   return (
@@ -57,18 +69,34 @@ const Login = () => {
 
       {/* Right Panel */}
       <div className={styles.rightPanel}>
-        <a href="#" className={styles.backLink}>
+        <a href="/" className={styles.backLink}>
           &larr; Back to website
         </a>
         <h2 className={styles.title}>Sign in</h2>
-        <form className={styles.form} onSubmit={login}>
-          <label className={styles.label}>User Id:</label>
+        
+        {error && (
+          <div style={{ 
+            padding: '10px', 
+            marginBottom: '15px', 
+            backgroundColor: '#fee', 
+            color: '#c33',
+            borderRadius: '5px',
+            fontSize: '14px'
+          }}>
+            {error}
+          </div>
+        )}
+        
+        <form className={styles.form} onSubmit={handleLogin}>
+          <label className={styles.label}>Username:</label>
           <input
-            // type="email"
-            placeholder="User Id"
-            value={email}
+            type="text"
+            placeholder="Enter your username"
+            value={username}
             className={styles.input}
-            onChange={(e) => setEmail(e.target.value)}
+            onChange={(e) => setUsername(e.target.value)}
+            required
+            disabled={loading}
           />
 
           <label className={styles.label}>Password:</label>
@@ -78,6 +106,8 @@ const Login = () => {
             placeholder="************"
             className={styles.input}
             onChange={(e) => setPassword(e.target.value)}
+            required
+            disabled={loading}
           />
 
           <div className={styles.footer}>
@@ -85,13 +115,30 @@ const Login = () => {
               Forgot password?
             </a>
           </div>
-          <button type="submit" className={styles.signInButton}>
-            Sign In
+          <button 
+            type="submit" 
+            className={styles.signInButton}
+            disabled={loading}
+          >
+            {loading ? 'Signing In...' : 'Sign In'}
           </button>
           <div className={styles.footer}>
-            <a href="#" className={styles.forgotPassword}>
+            <a href="/signup" className={styles.forgotPassword}>
               Don't have an account? sign up
             </a>
+          </div>
+          
+          {/* Test credentials hint */}
+          <div style={{ 
+            marginTop: '20px', 
+            padding: '10px', 
+            backgroundColor: '#f0f8ff',
+            borderRadius: '5px',
+            fontSize: '12px'
+          }}>
+            <strong>Test Credentials:</strong><br/>
+            Employer: username: <code>employer</code>, password: <code>employer123</code><br/>
+            Candidate: username: <code>candidate</code>, password: <code>candidate123</code>
           </div>
         </form>
       </div>

@@ -1,73 +1,110 @@
-.business_container {
+.card {
   position: relative;
-  width: 420px;
-  height: 600px;
+  width: 300px;
+  height: 450px;
+  border-radius: 20px;
   overflow: hidden;
-}
-
-.business_container_top {
-  position: relative;
-  width: 100%;
-  height: 100%;
-}
-
-.business_container_image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(255, 255, 255, 0.6); /* Transparent white */
-  opacity: 0; /* Initially hidden */
-  transition: opacity 0.5s ease-in-out; /* Smooth fade-in effect */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.overlay_text {
-  text-align: left;
-  color: black;
-  font-family: "Albert Sans", sans-serif;
-  font-optical-sizing: auto;
-  transition: opacity 0.3s ease-in-out; /* Text animation */
-  opacity: 0;
-  padding-top: 10px;
-}
-
-.overlay_text h2 {
-  font-size: 30px;
-  font-weight: 600;
-  margin-bottom: 10px;
-}
-
-.overlay_text p {
-  font-size: 18px;
-}
-
-.business_container_top:hover .overlay {
-  opacity: 1; /* Show the overlay on hover */
   cursor: pointer;
+  transition: all 0.8s cubic-bezier(0.4, 0.0, 0.2, 1);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
 }
 
-.business_container_top:hover .overlay_text {
-  opacity: 1; /* Show the text on hover */
-  animation: fadeInText 0.5s ease-in-out; /* Animation for text */
+.card:hover {
+  width: 600px;
+  height: 450px;
+  box-shadow: 0 15px 50px rgba(0, 0, 0, 0.4);
 }
 
-@keyframes fadeInText {
-  from {
-    transform: translateY(10px);
-    opacity: 0;
-  }
-  to {
-    transform: translateY(0);
-    opacity: 1;
-  }
+.card_image {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  transition: all 0.8s cubic-bezier(0.4, 0.0, 0.2, 1);
+}
+
+.card:hover .card_image {
+  background-image: url('/windmill.jpg') !important;
+  filter: brightness(1.1);
+}
+
+.card_overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.2);
+  transition: all 0.8s cubic-bezier(0.4, 0.0, 0.2, 1);
+}
+
+.card:hover .card_overlay {
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0.9) 0%,
+    rgba(255, 255, 255, 0.7) 50%,
+    rgba(255, 255, 255, 0.3) 100%
+  );
+}
+
+.card_content {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  padding: 30px;
+  transition: all 0.8s cubic-bezier(0.4, 0.0, 0.2, 1);
+}
+
+.card:hover .card_content {
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.card_title {
+  color: white;
+  font-size: 2.5rem;
+  font-weight: 700;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  letter-spacing: 3px;
+  transform: rotate(180deg);
+  transition: all 0.8s cubic-bezier(0.4, 0.0, 0.2, 1);
+  opacity: 1;
+  margin: 0;
+}
+
+.card:hover .card_title {
+  writing-mode: horizontal-tb;
+  text-orientation: mixed;
+  letter-spacing: 2px;
+  font-size: 2rem;
+  color: black;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+  transform: rotate(0deg);
+  margin-bottom: 15px;
+}
+
+.card_description {
+  color: black;
+  font-size: 1rem;
+  line-height: 1.6;
+  text-align: center;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s cubic-bezier(0.4, 0.0, 0.2, 1);
+  position: absolute;
+  padding: 0;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+  margin: 0;
+}
+
+.card:hover .card_description {
+  opacity: 1;
+  transform: translateY(0);
+  position: relative;
+  padding: 0 30px;
 }

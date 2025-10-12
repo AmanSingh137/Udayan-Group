@@ -9,6 +9,7 @@
   font-family: "Albert Sans", sans-serif;
   font-optical-sizing: auto;
   height: 70px;
+  position: relative;
   z-index: 100;
 }
 .navbar_container_left {
@@ -29,4 +30,10 @@
   color: black;
   font-weight: 500;
   font-size: 20px;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.navlink:hover {
+  text-decoration: underline;
 }

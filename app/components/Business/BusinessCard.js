@@ -1,25 +1,23 @@
 import React from "react";
 import styles from "./Businesscard.module.css";
-import Image from "next/legacy/image";
 
 function BusinessCard() {
   return (
-    <div className={styles.business_container}>
-      <div className={styles.business_container_top}>
-        <Image
-          className={styles.business_container_image}
-          src="/windmill.jpg"
-          alt="Business Banner"
-          width={420}
-          height={600}
-          priority
-        />
-        <div className={styles.overlay}>
-          <div className={styles.overlay_text}>
-            <h2>Windmill Energy</h2>
-            <p>Leading the way in sustainable energy solutions.</p>
-          </div>
-        </div>
+    <div className={styles.card}>
+      <div 
+        className={styles.card_image}
+        style={{
+          backgroundImage: 'url(/windmill.jpg)'
+        }}
+      ></div>
+      <div className={styles.card_overlay}></div>
+      <div className={styles.card_content}>
+        <h2 className={styles.card_title}>WINDMILL ENERGY</h2>
+        <p className={styles.card_description}>
+          Leading the way in sustainable energy solutions. 
+          Discover innovative renewable energy technologies that power tomorrow. 
+          Experience the future of clean energy and environmental sustainability.
+        </p>
       </div>
     </div>
   );
