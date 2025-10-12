@@ -44,6 +44,7 @@
 .textContainer {
   width: 30%;
   text-align: left;
+  padding: 1rem;
   /* background-color: red; */
 }
 
