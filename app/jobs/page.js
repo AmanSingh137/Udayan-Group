@@ -1,13 +1,24 @@
-import React from "react";
-import JobsPage from "../JobsPage";
-import ApplyJobPage from "../ApplyJobPage";
-import PostJobPage from "../PostJobPage";
-import Campus from "../Campus/Campus";
+"use client";
+import React, { useState, useEffect } from "react";
 import Dashboard from "../Dashboard";
 import Sidebar from "../components/Dashboard/Sidebar";
-import Login from "../login/Login";
 
-function page() {
+function Page() {
+  const [activeFilters, setActiveFilters] = useState({});
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  const handleFilterChange = (filters) => {
+    setActiveFilters(filters);
+  };
+
+  if (!mounted) {
+    return null; // Prevent SSR mismatch
+  }
+
   return (
     <div
       style={{
@@ -15,15 +26,10 @@ function page() {
         height: "100vh",
       }}
     >
-      {/* <ApplyJobPage></ApplyJobPage> */}
-      {/* <PostJobPage></PostJobPage> */}
-      {/* <JobsPage></JobsPage> */}
-      <Sidebar />
-      <Dashboard></Dashboard>
-      {/* <Campus></Campus> */}
-      {/* <Login></Login> */}
+      <Sidebar onFilterChange={handleFilterChange} />
+      <Dashboard filters={activeFilters} />
     </div>
   );
 }
 
-export default page;
+export default Page;

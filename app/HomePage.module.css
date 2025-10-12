@@ -2,18 +2,33 @@
 @import url("https://fonts.googleapis.com/css2?family=Albert+Sans:ital,wght@0,100..900;1,100..900&display=swap");
 
 .container {
-  height: 90vh;
+  height: 100vh;
   overflow: hidden;
-  background-color: rgb(208, 208, 208);
-  /* background-color: red;
-    border: 3px solid white; */
-  /* background: url("../public/banner.jpg"); */
+  background: url("/banner.jpg");
   background-size: cover;
   background-repeat: no-repeat;
+  background-position: center;
   justify-content: flex-end;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
+  position: relative;
+}
+
+.container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(208, 208, 208, 0.3);
+  z-index: 1;
+}
+
+.container > * {
+  position: relative;
+  z-index: 2;
 }
 .map_container {
   display: flex;
@@ -481,7 +496,8 @@
 .container2_left_img_container {
   width: 600px;
   height: 400px;
-  background-color: rgb(87, 86, 86);
+  background-image: url("/ship-deer.jpg");
+  background-size: cover;
 }
 
 .container2_right {

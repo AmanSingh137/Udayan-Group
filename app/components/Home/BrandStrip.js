@@ -1,3 +1,4 @@
+"use client";
 import { BrandIconSvg } from "@/app/svg";
 import React, { useEffect, useRef, useState } from "react";
 import styles from "./BrandStrip.module.css";

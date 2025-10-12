@@ -1,12 +1,18 @@
+"use client";
 import React, { useEffect, useState } from "react";
 import styles from "./TextBlockSection.module.css"; // Link to the accompanying CSS
 import Aos from "aos";
 
 function TextBlockSection() {
+  const [mounted, setMounted] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
+  
   useEffect(() => {
     // Initialize AOS
     Aos.init({ duration: 1000, once: true });
+    
+    // Mark component as mounted
+    setMounted(true);
 
     if (typeof window !== "undefined") {
       const handleResize = () => {
@@ -16,9 +22,6 @@ function TextBlockSection() {
       window.addEventListener("resize", handleResize);
       return () => window.removeEventListener("resize", handleResize);
     }
-
-    // Open the curtain after a short delay
-    setTimeout(() => setCurtainOpen(true), 500);
   }, []);
 
   const blocks = [

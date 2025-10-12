@@ -14,6 +14,7 @@ import ScrollVelocity from "./components/Home/ScrollVelocity";
 import SplitText from "./components/Home/SplitText";
 
 function HomePage() {
+  const [mounted, setMounted] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
   const [curtainOpen, setCurtainOpen] = useState(false);
   const Qualities = [
@@ -21,27 +22,34 @@ function HomePage() {
       title: "Excellence Through Balanced Leadership",
       description:
         "Leading globally with innovation, we balance growth, sustainability, and excellence to satisfy customers, employees, owners, and society.",
+      image: "/business_banner.jpg"
     },
     {
       title: "Comprehensive Engineering & Project",
       description:
         "Leading globally with innovation, we balance growth, sustainability, and excellence to satisfy customers, employees, owners, and society.",
+      image: "/windmill.jpg"
     },
     {
       title: "Excellence Through Balanced Leadership",
       description:
         "Leading globally with innovation, we balance growth, sustainability, and excellence to satisfy customers, employees, owners, and society.",
+      image: "/banner.jpg"
     },
     {
       title: "Comprehensive Engineering & Project",
       description:
         "Leading globally with innovation, we balance growth, sustainability, and excellence to satisfy customers, employees, owners, and society.",
+      image: "/windmill.jpg"
     },
   ];
 
   useEffect(() => {
     // Initialize AOS
     AOS.init({ duration: 1000, once: true });
+    
+    // Mark component as mounted
+    setMounted(true);
 
     if (typeof window !== "undefined") {
       const handleResize = () => {
@@ -133,6 +141,7 @@ function HomePage() {
               <HomeQualityCard
                 quality={quality}
                 index={index}
+                image={quality.image}
               ></HomeQualityCard>
             </div>
           );

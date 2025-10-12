@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import JobCard from "./components/Jobs/JobCard";
 import styles from "./Dashboard.module.css";
@@ -7,31 +7,58 @@ import { FiSearch } from "react-icons/fi";
 import { useJobs } from "./hooks/useJobs";
 import { useAuth } from "./context/AuthContext";
 
-export default function Dashboard() {
+export default function Dashboard({ filters }) {
   const router = useRouter();
-  const { user, isEmployer } = useAuth();
+  const auth = useAuth();
+  const user = auth?.user;
+  const isEmployer = auth?.isEmployer || (() => false);
   const { 
     jobs, 
     loading, 
     error, 
     searchJobs, 
-    fetchMyJobs, 
+    fetchMyJobs,
+    fetchJobsByType,
     pagination 
-  } = useJobs({ autoFetch: false, size: 12 });
+  } = useJobs({ autoFetch: true, size: 12 });
 
   const [searchKeyword, setSearchKeyword] = useState("");
   const [viewMode, setViewMode] = useState("all"); // 'all' or 'myJobs'
 
-  useState(() => {
-    // Load jobs based on user role
-    if (isEmployer()) {
-      fetchMyJobs();
-      setViewMode("myJobs");
-    } else {
-      searchJobs("", 0, 12);
-      setViewMode("all");
+  // Apply filters when they change
+  useEffect(() => {
+    if (filters && Object.keys(filters).length > 0) {
+      const activeFilters = Object.keys(filters).filter(key => filters[key]);
+      
+      if (activeFilters.length > 0) {
+        // Check for job type filters first
+        const typeMap = {
+          fullTime: "FULL_TIME",
+          partTime: "PART_TIME",
+          internship: "INTERNSHIP",
+        };
+        
+        const jobTypeFilter = activeFilters.find(f => typeMap[f]);
+        
+        if (jobTypeFilter) {
+          // Filter by job type
+          const jobType = typeMap[jobTypeFilter];
+          fetchJobsByType(jobType, 0, 12);
+        } else if (activeFilters.includes('remote') || activeFilters.includes('distant')) {
+          // Filter by location for remote/distant work
+          searchJobs("Remote", 0, 12);
+        } else if (activeFilters.includes('fullDay')) {
+          // Show all jobs for full day (can refine this logic)
+          searchJobs("", 0, 12);
+        } else {
+          searchJobs("", 0, 12);
+        }
+      } else {
+        // No filters active, show all jobs
+        searchJobs("", 0, 12);
+      }
     }
-  }, []);
+  }, [filters]);
 
   const handleSearch = () => {
     if (viewMode === "myJobs") {
@@ -46,7 +73,7 @@ export default function Dashboard() {
       router.push("/login");
       return;
     }
-    if (!isEmployer()) {
+    if (isEmployer && !isEmployer()) {
       alert("Only employers can post jobs. Please login as an employer.");
       return;
     }
@@ -54,6 +81,8 @@ export default function Dashboard() {
   };
 
   const toggleViewMode = () => {
+    if (!user) return;
+    
     if (viewMode === "all") {
       fetchMyJobs();
       setViewMode("myJobs");
@@ -111,22 +140,24 @@ export default function Dashboard() {
             />
           </button>
         </div>
-        <div style={{ display: "flex", gap: "10px" }}>
-          {isEmployer() && (
-            <button 
-              className={styles.postJob}
-              onClick={toggleViewMode}
-              style={{ 
-                backgroundColor: viewMode === "myJobs" ? "#28a745" : "#6c757d"
-              }}
-            >
-              {viewMode === "myJobs" ? "View All Jobs" : "My Posted Jobs"}
+        {user && (
+          <div style={{ display: "flex", gap: "10px" }}>
+            {isEmployer && isEmployer() && (
+              <button 
+                className={styles.postJob}
+                onClick={toggleViewMode}
+                style={{ 
+                  backgroundColor: viewMode === "myJobs" ? "#28a745" : "#6c757d"
+                }}
+              >
+                {viewMode === "myJobs" ? "View All Jobs" : "My Posted Jobs"}
+              </button>
+            )}
+            <button className={styles.postJob} onClick={handlePostJob}>
+              Post a job
             </button>
-          )}
-          <button className={styles.postJob} onClick={handlePostJob}>
-            Post a job
-          </button>
-        </div>
+          </div>
+        )}
       </div>
 
       {/* Job Openings Section */}
@@ -182,7 +213,7 @@ export default function Dashboard() {
               Post Your First Job
             </button>
           )}
-        </div>
+      </div>
       )}
 
       <div>
